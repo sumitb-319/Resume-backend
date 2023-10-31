@@ -1,0 +1,119 @@
+﻿Exp 3
+
+
+Mkdir test
+Cd test
+Git init
+//create demo.txt file
+Git status
+//first commit
+Git config –global user.email “”
+Git config –global user.name “”
+Git commit -m “firstcommit”
+
+
+//create repo
+Git remote add origin url
+Git push origin master
+
+
+
+
+
+
+
+
+
+
+                        Exp 4
+//installl configure jenkins with maven >job
+//create dev tools in c
+Create project
+>configuration(echo this is first job)
+Build now
+Project build
+Plugins > maven integration > installed
+
+
+
+
+
+
+
+
+
+
+
+
+                Exp 5
+//pipeline using maven
+Click on project >compile > configure
+Add repo url(https://github.com/anujdevopslearn/MavenBuild.git)
+Build env > build steps >invoke top level maven targets
+Set goals as compile >apply >save
+Go to dashboard
+Create dev-item >form project test
+Enter the repo url
+goals>test
+Dashboard >workspace>target>surefire reports
+Open xml file
+Open configuration > enter xml files (post build action > report)
+>project test status
+New item> name: project package
+>enter repo url
+Set goals as package
+Dashboard
+Configuration > projects to build > project test
+Go to status
+Project test configuration > project to watch > project compile
+Project to build > project package
+Go to status
+Go to plugins
+Install without restart
+Dashboard > new view >Devops CI/CD pipeline
+>configure>initial job > project compile
+>set no of displayed build as 3
+Pipeline built
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                Exp6
+Open dashboard
+New node > slave1
+Directory C:createJenkins
+Manage jenkins >nodes >
+Root directory :jenkinsremotedir
+Labels: bin_slave
+Usage > as much as possible
+Launch method >launc agent by connecting it to the controller
+Go to slave1 > copy
+Manage jenkins > security > plain text / random
+Go to cmd >paste(start with echo)
+dashboard>project package >configuration >restrict where the project can be run>label bin_slave
+Node >slave 1 >configuration > Home>C:\Git\bin\git.exe
+Test the project by build
+
+
+
+
+
+
+                        Exp 7:
+New item > name: Selenium Project
+Enter repo url
+Pre-steps > goals > test
+Root pom > goals & options > test
+Build selenium project
+Workspace >targets >surefire reports >open xml file
+Open selenium project > click test result
